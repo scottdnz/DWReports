@@ -1,0 +1,88 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
+
+</head>
+
+<body>
+
+{#        <div class="container">#}
+{#            <p>Test {{ test }}</p>#}
+
+<div class="container-fluid">
+    <div class="row h-100">
+        <div class="col-md-2">
+            <aside class="left-sidebar" data-sidebarbg="skin5">
+
+                <div>
+                    <a href="index.html" class="logo">&nbsp;
+                        <b class="logo-icon">
+                            <img src="{{ asset('img/hackerzone.svg') }}" alt="homepage" class="sectionLogo">
+                        </b>
+                        <span class="logo-text">
+                            Reports Dashboard
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Sidebar scroll-->
+                <div class="scroll-sidebar">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav">
+                        <div id="sidebarnav" class="in">
+                            <div class="sidebar-item selected">
+                                <a class="sidebar-link waves-effect waves-dark active" href="index.html" aria-expanded="false">
+                                    <i class="mdi mdi-av-timer"></i>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark " href="pages-profile.html" aria-expanded="false">
+                                    <i class="mdi mdi-account-network"></i>
+                                    <span class="hide-menu">Profile</span>
+                                </a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark" href="form-basic.html" aria-expanded="false">
+                                    <i class="mdi mdi-arrange-bring-forward"></i>
+                                    <span class="hide-menu">Form Basic</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </nav>
+                    <!-- End Sidebar navigation -->
+                </div>
+                <!-- End Sidebar scroll-->
+            </aside>
+        </div>
+
+
+        <div class="col-md-8">
+            <div id="appDashboard">
+                <br>
+                <nav class="navbar navbar-light bg-light navbar-expand-lg">
+                    <!-- <router-link to="/user-admin">User Admin</router-link> -->
+                    <router-link to="/graph-bar" class="nav-item nav-link">Bar Graph</router-link>
+                </nav>
+
+                <router-view></router-view>
+
+            </div>
+
+            <script src="./js/dist/bundle_dashboard.js"></script>
+{#            <div class="card">#}
+{#                <div class="card-body">#}
+{#                    <h4 class="card-title">Sales Ratio</h4>#}
+{#                    <div class="s">#}
+
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
+
+        <script src="{{ asset('node_modules/chart.js/dist/Chart.min.js') }}"></script>
+    </head>
+
+    <body>
+
+{#        <div class="container">#}
+{#            <p>Test {{ test }}</p>#}
+
+        <div class="container-fluid">
+            <div class="row h-100">
+                <div class="col-md-2">
+            <aside class="left-sidebar" data-sidebarbg="skin5">
+
+                <div>
+                    <a href="index.html" class="logo">&nbsp;
+                        <b class="logo-icon">
+                            <img src="{{ asset('img/hackerzone.svg') }}" alt="homepage" class="sectionLogo">
+                        </b>
+                        <span class="logo-text">
+                            Reports Dashboard
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Sidebar scroll-->
+                <div class="scroll-sidebar">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav">
+                        <div id="sidebarnav" class="in">
+                            <div class="sidebar-item selected">
+                                <a class="sidebar-link waves-effect waves-dark active" href="index.html" aria-expanded="false">
+                                    <i class="mdi mdi-av-timer"></i>
+                                    <span class="hide-menu">Dashboard</span>
+                                </a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark " href="pages-profile.html" aria-expanded="false">
+                                    <i class="mdi mdi-account-network"></i>
+                                    <span class="hide-menu">Profile</span>
+                                </a>
+                            </div>
+                            <div class="sidebar-item">
+                                <a class="sidebar-link waves-effect waves-dark" href="form-basic.html" aria-expanded="false">
+                                    <i class="mdi mdi-arrange-bring-forward"></i>
+                                    <span class="hide-menu">Form Basic</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </nav>
+                    <!-- End Sidebar navigation -->
+                </div>
+                <!-- End Sidebar scroll-->
+            </aside>
+        </div>
+
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Sales Ratio</h4>
+                    <div class="s">
+
+                        <canvas id="myChart" ></canvas>
+                        <script>
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            var myChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                                    datasets: [{
+                                        label: '# of Votes',
+                                        data: [12, 19, 3, 5, 2, 3],
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(255, 159, 64, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        </div>
+    </body>
+</html>

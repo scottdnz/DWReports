@@ -1,0 +1,72 @@
+DWReports notes
+
+
+Already had Ubuntu 19.1, LAMP, composer, node.js (v12)
+
+
+MongoDB: 
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+sudo service mongod start
+mongo
+
+sudo apt install php-mongodb
+
+
+
+composer create-project symfony/skeleton DWReports
+
+Put composer.json in root
+
+Put package.json (for node) in /public
+
+
+Run test server from root:
+php -S 127.0.0.1:8000 -t public
+
+URL: http://localhost:8000/dashboard
+
+Progress:
+-get chart showing with chart.js - have npm package put into component + standalone test page
+-Vue next with webpack & gulp - done
+-then SQL queries
+-then Mongo queries
+
+Report dashboard template model:
+https://wrappixel.com/demos/free-admin-templates/nice-admin-lite/nice-html/ltr/index.html
+
+npm install vue-template-compiler
+
+*Gulp
+sudo npm install --global gulp-cli
+npm install --save-dev gulp
+
+Manual call for webpack bundling from src to dist folder:
+npx webpack --entry ./js/src/main.js -o ./js/dist/bundle.js --mode production
+
+if have a webpack config file, just run:
+npx webpack
+
+
+Mongo:
+sudo service mongod start
+mongo
+--> cli
+use dwreports;
+
+
+db.results.find({"attributes": {"from": "2019-02-01 00:00:00", "to": "2020-01-31 23:59:59" } });
+
+
+
+
+For these responses when you:
+-load the Workloads Dashboard page for VRFI (4 other tiles)
+-for each tile:
+	when you first click on it (table row items)
+	when you click on each bar in the graph  (drilled-down table row items)
+
+php -S 127.0.0.1:8000 -t public
+
