@@ -17,7 +17,7 @@
                     <aside class="left-sidebar" data-sidebarbg="skin5">
 
                         <div>
-                            <a href="index.html" class="logo">&nbsp;
+                            <a href="/dashboard" class="logo">&nbsp;
                                 <b class="logo-icon">
                                     <img src="{{ asset('img/hackerzone.svg') }}" alt="homepage" class="sectionLogo">
                                 </b>
@@ -36,19 +36,21 @@
                                 <div id="sidebarnav" class="in">
                                     <router-link to="/graph-bar">
                                         <div class="sidebar-item selected">
-                                            <a class="sidebar-link waves-effect waves-dark active" href="index.html" aria-expanded="false">
+                                            <span class="sidebar-link waves-effect waves-dark active" href="index.html" aria-expanded="false">
                                                 <i class="mdi mdi-av-timer"></i>
                                                 <span class="hide-menu">Days on VRFI for Applications</span>
-                                            </a>
+                                            </span>
                                         </div>
                                     </router-link>
 
-                                    <div class="sidebar-item">
-                                        <a class="sidebar-link waves-effect waves-dark " href="pages-profile.html" aria-expanded="false">
-                                            <i class="mdi mdi-account-network"></i>
-                                            <span class="hide-menu">VRFI Applications Data</span>
-                                        </a>
-                                    </div>
+                                    <router-link to="/table">
+                                        <div class="sidebar-item">
+                                            <span class="sidebar-link waves-effect waves-dark " href="pages-profile.html" aria-expanded="false">
+                                                <i class="mdi mdi-account-network"></i>
+                                                <span class="hide-menu">VRFI Applications Data</span>
+                                            </span>
+                                        </div>
+                                    </router-link>
 {#                                    <div class="sidebar-item">#}
 {#                                        <a class="sidebar-link waves-effect waves-dark" href="form-basic.html" aria-expanded="false">#}
 {#                                            <i class="mdi mdi-arrange-bring-forward"></i>#}

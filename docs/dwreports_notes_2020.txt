@@ -70,7 +70,8 @@ For these responses when you:
 
 php -S 127.0.0.1:8000 -t public
 
-localhost:8000/dashboard/graph?date_from=2019-02-01 00:00:00&date_to=2020-01-31 23:59:59
+localhost:8000/dashboard/graph?date_from=2019-02-01 00:00:00&date_to=2020-01-31 23:59:59&
+/dashboard/graph?date_from=2019-02-01 00:00:00&date_to=2020-01-31 23:59:59&daysOnVRFISelected=21|All
 
 
 Speech ideas:
@@ -80,3 +81,28 @@ Please with gulp & webpack in pipeline - doing all the compiling and building fo
 Would like to have tried the vue-chartjs library designed for reactive properties for vue
 
 
+Startup commands:
+#1:
+sudo service mongod start;
+php -S 127.0.0.1:8000 -t public
+
+#2:
+cd public;
+gulp
+
+
+
+get 2019 graph data - done
+get table data for at least 1 year - done
+GraphService for Symfony - done
+
+http://localhost:8000/dashboard/table?date_from=2019-02-01 0000:00:00&date_to=2020-01-31 23:59:59
+
+CreationDate
+JID
+SiteAddress
+EstimatedValue
+DaysOnRFI
+
+
+\":\"2019-02-14 14:07:00\",\"JID\":\"190113\",\"SiteAddress\":\"68 Weld Street Turitea Manawatu-wanganui Palmerston North 4472\",\"EstimatedValue\":\"120000.00\",\"DaysOnRFI\":\"221\"},{\

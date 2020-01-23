@@ -24,6 +24,52 @@
             xLabels: xLabels,
             graphColours: graphColours
         };
+    },
+
+    this.buildURL = function(yearSelected, daysOnVRFISelected, nowMoment) {
+        let yearNum = yearSelected;
+        let from = yearNum + "-01-01 00:00:00";
+        let to = yearNum + "-12-31 23:59:59";
+
+        if (yearSelected === "Last 12 months") {
+            // This would be the normal case
+            let yearAgo = nowMoment.subtract(1, "years");
+            yearNum = yearAgo.format('YYYY');
+            from = yearNum + "-01-01 00:00:00";
+            to = yearNum + "-12-31 23:59:59";
+
+            // This is just for testing
+            from = "2019-02-01 00:00:00";
+            to = "2020-01-31 23:59:59";
+        }
+
+        let url = "/dashboard/graph?date_from=" + from + "&date_to=" + to + "&daysOnVRFISelected=" + daysOnVRFISelected;
+        return url;
+    }
+
+    this.setGraphConfig = function(graphType, graphVals) {
+        return {
+            type: graphType, // bar or line
+            data: {
+                labels: graphVals.xLabels,
+                datasets: [{
+                    label: 'Days',
+                    data: graphVals.dataValues,
+                    backgroundColor: graphVals.graphColours,
+                    borderColor: graphVals.graphColours,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        }
     }
 };
 

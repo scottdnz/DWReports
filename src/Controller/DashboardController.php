@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use App\LibMongo\MClient;
+use App\Service\MClient;
 
 class DashboardController extends AbstractController
 {
@@ -25,9 +25,7 @@ class DashboardController extends AbstractController
     public function dashboard()
     {
         return $this->render("dashboard/dashboard.html.twig",
-            [
-                "test" => "test message"
-            ]
+            []
         );
     }
 
@@ -35,7 +33,7 @@ class DashboardController extends AbstractController
      * Returns JSON
      * @Route("/dashboard/graph", name="graph")
      */
-    public function graph(Request $request) {
+    public function graph(Request $request, MClient $client) {
         $status = "ok";
 
         $from = $request->query->get("date_from");
@@ -47,7 +45,7 @@ class DashboardController extends AbstractController
             "1|10" => "Applications On VRFI On Day 10 Or Less",
             '11|15' => "Applications On VRFI Between 11 And 15 Days",
             '16|20' => "Applications On VRFI Between 16 And 20 Days",
-            '21+' => "Applications On VRFI On Day 21 Or More"
+            '21|All' => "Applications On VRFI On Day 21 Or More"
         ];
 
         $graphTitle = null;
@@ -55,7 +53,7 @@ class DashboardController extends AbstractController
             $graphTitle = $mapping[$daysOnVRFISelected];
         }
 
-        $client = new MClient();
+//        $client = new MClient();
         $res = $client->findGraphResultsInDateRange("results",
             $from,
             $to,
@@ -65,10 +63,36 @@ class DashboardController extends AbstractController
             [
                 "status" => $status,
                 "res" => json_encode($res),
-//                "graphTitle" => $graphTitle
+                "graphTitle" => $graphTitle
             ]
         // JsonResponse::HTTP_CREATED
         );;
+    }
+
+    /**
+    * Returns JSON
+    * @Route("/dashboard/table", name="table")
+    */
+    public function table(Request $request, MClient $client)
+    {
+        $status = "ok";
+
+        $from = $request->query->get("date_from");
+        $to = $request->query->get("date_to");
+
+//        $client = new MClient();
+        $res = $client->findTabularResultsInDateRange("results",
+            $from,
+            $to);
+
+        return new JsonResponse(
+            [
+                "status" => $status,
+                "res" => json_encode($res),
+                "from" => $from,
+                "to" => $to
+            ]
+        );
     }
 
     /**

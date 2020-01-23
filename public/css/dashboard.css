@@ -30,7 +30,7 @@
     background: gray;
 }
 
-a.sidebar-link:hover {
+.sidebar-link:hover {
     text-decoration: none;
     color: #fff;
 }

@@ -1,9 +1,9 @@
 {
   "data_type": "graph",
-    "result": true,
     "period": "this_month",
-    "the_number": "3",
+    "the_number": "13",
     "data": [
+      0,
       1,
       0,
       0,
@@ -14,20 +14,26 @@
       0,
       0,
       2,
-      0,
-      0
+      10
     ],
     "other_data": [],
     "attributes": {
-      "title": "Applications On VRFI On Day 21 Or More",
-      "css_class": "brown-block",
+      "title": "Days on VRFI for Applications",
+      "css_class": "blue-block",
       "heading": "On VRFI",
-      "text1": "21 or more",
-      "text2": "Working Days",
+      "text1": "Apps on",
+      "text2": "VRFI",
       "number_appendix": "",
       "number_prefix": "",
       "theNumberLabel": "Total",
       "tooltipValueLookups": [
+        {
+          "period": "Jan-19",
+          "tab_title": "Jan-19",
+          "date_from": "01-Jan-2019",
+          "date_to": "31-Jan-2019",
+          "value": 0
+        },
         {
           "period": "Feb-19",
           "tab_title": "Feb-19",
@@ -103,19 +109,12 @@
           "tab_title": "Dec-19",
           "date_from": "01-Dec-2019",
           "date_to": "31-Dec-2019",
-          "value": 0
-        },
-        {
-          "period": "Jan-20",
-          "tab_title": "Jan-20",
-          "date_from": "01-Jan-2020",
-          "date_to": "31-Jan-2020",
-          "value": 0
+          "value": 10
         }
       ]
     },
-  "from": "2019-02-01 00:00:00",
-  "to": "2020-01-31 23:59:59",
+    "from": "2019-01-01 00:00:00",
+    "to": "2019-12-31 23:59:59",
     "items_attributes": [
       {
         "field": "JID",
