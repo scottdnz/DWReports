@@ -1,0 +1,169 @@
+{
+  "period": "this_month",
+  "the_number": "14",
+  "data_type": "graph",
+  "data": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    10,
+    1
+  ],
+  "other_data": [],
+  "attributes": {
+    "title": "Days on VRFI for Applications",
+    "css_class": "blue-block",
+    "heading": "On VRFI",
+    "text1": "Apps on",
+    "text2": "VRFI",
+    "number_appendix": "",
+    "number_prefix": "",
+    "theNumberLabel": "Total",
+    "tooltipValueLookups": [
+      {
+        "period": "Feb-19",
+        "tab_title": "Feb-19",
+        "date_from": "01-Feb-2019",
+        "date_to": "28-Feb-2019",
+        "value": 1
+      },
+      {
+        "period": "Mar-19",
+        "tab_title": "Mar-19",
+        "date_from": "01-Mar-2019",
+        "date_to": "31-Mar-2019",
+        "value": 0
+      },
+      {
+        "period": "Apr-19",
+        "tab_title": "Apr-19",
+        "date_from": "01-Apr-2019",
+        "date_to": "30-Apr-2019",
+        "value": 0
+      },
+      {
+        "period": "May-19",
+        "tab_title": "May-19",
+        "date_from": "01-May-2019",
+        "date_to": "31-May-2019",
+        "value": 0
+      },
+      {
+        "period": "Jun-19",
+        "tab_title": "Jun-19",
+        "date_from": "01-Jun-2019",
+        "date_to": "30-Jun-2019",
+        "value": 0
+      },
+      {
+        "period": "Jul-19",
+        "tab_title": "Jul-19",
+        "date_from": "01-Jul-2019",
+        "date_to": "31-Jul-2019",
+        "value": 0
+      },
+      {
+        "period": "Aug-19",
+        "tab_title": "Aug-19",
+        "date_from": "01-Aug-2019",
+        "date_to": "31-Aug-2019",
+        "value": 0
+      },
+      {
+        "period": "Sep-19",
+        "tab_title": "Sep-19",
+        "date_from": "01-Sep-2019",
+        "date_to": "30-Sep-2019",
+        "value": 0
+      },
+      {
+        "period": "Oct-19",
+        "tab_title": "Oct-19",
+        "date_from": "01-Oct-2019",
+        "date_to": "31-Oct-2019",
+        "value": 0
+      },
+      {
+        "period": "Nov-19",
+        "tab_title": "Nov-19",
+        "date_from": "01-Nov-2019",
+        "date_to": "30-Nov-2019",
+        "value": 2
+      },
+      {
+        "period": "Dec-19",
+        "tab_title": "Dec-19",
+        "date_from": "01-Dec-2019",
+        "date_to": "31-Dec-2019",
+        "value": 10
+      },
+      {
+        "period": "Jan-20",
+        "tab_title": "Jan-20",
+        "date_from": "01-Jan-2020",
+        "date_to": "31-Jan-2020",
+        "value": 1
+      }
+    ]
+  },
+  "from": "2019-02-01 00:00:00",
+  "to": "2020-01-31 23:59:59",
+  "items_attributes": [
+    {
+      "field": "JID",
+      "heading": "ID",
+      "type": "link",
+      "label_field": "JobID",
+      "link": "/jobs/%JID%/vetting/rfi"
+    },
+    {
+      "field": "Complexity",
+      "heading": "Cpx",
+      "type": "text"
+    },
+    {
+      "field": "CreationDate",
+      "heading": "Imported",
+      "type": "text"
+    },
+    {
+      "field": "DaysOnRFI",
+      "heading": "Days on VRFI",
+      "type": "number"
+    },
+    {
+      "field": "SiteAddress",
+      "heading": "Site Address",
+      "type": "text",
+      "max_length": 30
+    },
+    {
+      "field": "EstimatedValue",
+      "heading": "Est. Value",
+      "type": "currency"
+    },
+    {
+      "field": "Description",
+      "heading": "Description",
+      "type": "text",
+      "max_length": 40
+    },
+    {
+      "field": "Owner",
+      "heading": "Owner",
+      "type": "text"
+    },
+    {
+      "field": "AgentName",
+      "heading": "Agent",
+      "type": "text"
+    }
+  ]
+}

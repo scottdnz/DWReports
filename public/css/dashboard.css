@@ -57,3 +57,7 @@ a.sidebar-link:hover {
     padding: 1.25rem;
     color: black;
 }
+
+.filterLabel {
+    padding-top: 6px;
+}

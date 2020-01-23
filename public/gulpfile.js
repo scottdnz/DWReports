@@ -21,7 +21,8 @@ exports.default = function() {
     gulp.watch(
         [
             'js/src/vue/dashboard/*.js',
-            'js/src/vue/dashboard/components/*.vue'
+            'js/src/vue/dashboard/components/*.vue',
+            'js/src/vue/dashboard/services/*.js'
 
         ],
         { ignoreInitial: false },

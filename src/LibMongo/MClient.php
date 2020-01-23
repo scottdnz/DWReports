@@ -63,38 +63,39 @@ class MClient
 
     //"from": "2019-02-01 00:00:00",
     //"to": "2020-01-31 23:59:59",
-    public function findGraphResultsInDateRange($collectionName="results", $dateFrom, $dateTo) {
+    public function findGraphResultsInDateRange($collectionName="results", $dateFrom, $dateTo, $graphTitle) {
 //        if ($collectionName === "results") {
             $collection = $this->client->dwreports->results;
 //        }
         $filters = [
             'data_type' => "graph",
             'from' => $dateFrom,
-            'to' => $dateTo
+            'to' => $dateTo,
+            'attributes.title' => [ '$eq' => $graphTitle]
         ];
 
         $result = $collection->findOne($filters);
 
-        $periods = [];
-        foreach ($result["attributes"]["tooltipValueLookups"] as $period) {
-            $periods[] = [
-                "period" => $period["period"],
-                "value" => $period["value"]
+        $doc = [];
+        if ($result) {
+
+            $periods = [];
+            foreach ($result["attributes"]["tooltipValueLookups"] as $period) {
+                $periods[] = [
+                    "period" => $period["period"],
+                    "value" => $period["value"]
+                ];
+            }
+
+            $doc = [
+                "title" => $result["attributes"]["title"],
+                "the_number" => $result["the_number"],
+                "periods" => $periods
             ];
         }
-
-        $doc = [
-            "title" => $result["attributes"]["title"],
-            "the_number" => $result["the_number"],
-            "periods" => $periods
-        ];
 
         return $doc;
     }
 
 }
-
-
-
-
 

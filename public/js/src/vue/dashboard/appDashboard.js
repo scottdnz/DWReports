@@ -2,9 +2,9 @@ const Vue = require('vue/dist/vue.js');
 const Axios = require("axios/dist/axios.js");
 const VueRouter = require("vue-router/dist/vue-router.js");
 const Moment = require("moment/min/moment.min.js");
-const Chartjs = require('chart.js/dist/Chart.min.js')
+const Chartjs = require('chart.js/dist/Chart.min.js');
+const GraphService = require("./services/GraphService.js").default;
 Vue.use(VueRouter);
-// const AdderService = require("./services/AdderService.js");
 
 // Define route components.
 const graphBarTemplate = require("./components/graphBar.vue").default; // note default!
@@ -14,11 +14,11 @@ const graphBarTemplate = require("./components/graphBar.vue").default; // note d
 const routes = [
     { path: '/graph-bar',
         component: graphBarTemplate,
-        props: {Axios: Axios, //pass Axios as a property to the child component (template)
+        props: (route) => ({Axios: Axios, //pass Axios as a property to the child component (template)
             Moment: Moment,
-            Chartjs: Chartjs
-            // AdderService: AdderService
-        }
+            Chartjs: Chartjs,
+            // GraphService: GraphService
+        })
     },
     // { path: '/survey-list',
     //     component: surveyListTemplate,
@@ -36,9 +36,5 @@ const router = new VueRouter({
 // Create and mount the root instance.
 const app = new Vue({
     router
-    // el: "#app",
-    // components: {
-    //     'AdderService': AdderService,
-    //     'fooTemplate': fooTemplate
-    //   },
-}).$mount('#appDashboard')
+}).$mount('#appDashboard');
+

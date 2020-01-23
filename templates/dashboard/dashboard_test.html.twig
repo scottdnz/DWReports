@@ -42,13 +42,13 @@
                             <div class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark " href="pages-profile.html" aria-expanded="false">
                                     <i class="mdi mdi-account-network"></i>
-                                    <span class="hide-menu">Profile</span>
+                                    <span class="hide-menu">Days on VRFI for Applications</span>
                                 </a>
                             </div>
                             <div class="sidebar-item">
                                 <a class="sidebar-link waves-effect waves-dark" href="form-basic.html" aria-expanded="false">
                                     <i class="mdi mdi-arrange-bring-forward"></i>
-                                    <span class="hide-menu">Form Basic</span>
+                                    <span class="hide-menu">VRFI Days Data</span>
                                 </a>
                             </div>
 
@@ -61,10 +61,10 @@
         </div>
 
 
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Sales Ratio</h4>
+                    <h4 class="card-title">Days on VRFI for Applications</h4>
                     <div class="s">
 
                         <canvas id="myChart" ></canvas>
@@ -110,6 +110,36 @@
 
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <br>
+            <h4>Filters</h4>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="filterLabel">Year: </label>
+                </div>
+                <select>
+                    <option>Last 12 months</option>
+                    <option>2019</option>
+                </select>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="filterLabel">Days on VRFI: </label>
+                </div>
+                <select>
+                    <option>All</option>
+                    <option>1 - 10</option>
+                    <option>11 - 15</option>
+                    <option>16 - 20</option>
+                    <option>21+</option>
+
+                </select>
             </div>
         </div>
 

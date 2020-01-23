@@ -70,3 +70,13 @@ For these responses when you:
 
 php -S 127.0.0.1:8000 -t public
 
+localhost:8000/dashboard/graph?date_from=2019-02-01 00:00:00&date_to=2020-01-31 23:59:59
+
+
+Speech ideas:
+Vue not as restrictive as Angular. Freedom to do what you want
+avoid doing quick & dirty things with jQuery
+Please with gulp & webpack in pipeline - doing all the compiling and building for me
+Would like to have tried the vue-chartjs library designed for reactive properties for vue
+
+

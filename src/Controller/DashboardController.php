@@ -40,21 +40,32 @@ class DashboardController extends AbstractController
 
         $from = $request->query->get("date_from");
         $to = $request->query->get("date_to");
-//        $data = json_decode(
-//            $request->getContent(),
-//            true
-//        );
+        $daysOnVRFISelected = $request->query->get("daysOnVRFISelected");
+
+        $mapping = [
+            '1|All' => 'Days on VRFI for Applications',
+            "1|10" => "Applications On VRFI On Day 10 Or Less",
+            '11|15' => "Applications On VRFI Between 11 And 15 Days",
+            '16|20' => "Applications On VRFI Between 16 And 20 Days",
+            '21+' => "Applications On VRFI On Day 21 Or More"
+        ];
+
+        $graphTitle = null;
+        if (array_key_exists($daysOnVRFISelected, $mapping)) {
+            $graphTitle = $mapping[$daysOnVRFISelected];
+        }
 
         $client = new MClient();
         $res = $client->findGraphResultsInDateRange("results",
             $from,
-            $to);
+            $to,
+            $graphTitle);
 
         return new JsonResponse(
             [
                 "status" => $status,
-                "res" => json_encode($res)
-
+                "res" => json_encode($res),
+//                "graphTitle" => $graphTitle
             ]
         // JsonResponse::HTTP_CREATED
         );;

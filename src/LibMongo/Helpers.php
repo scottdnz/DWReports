@@ -12,23 +12,24 @@ class Helpers
         $client->clearCollection();
 
         $fNames = [
-            "month_Feb_2019.json",
-            "month_Nov_2019.json",
-            "month_Dec_2019.json",
-            "month_Jan_2020.json",
-            "vrfi_all_2019.json",
-            "vrfi_graph.json"
+            "vrfi_1_10_days.json",
+            "vrfi_11_15_days.json",
+            "vrfi_16_20_days.json",
+            "vrfi_21plus_days.json",
+            "vrfi_all.json"
+
+//            "month_Feb_2019.json",
+//            "month_Nov_2019.json",
+//            "month_Dec_2019.json",
+//            "month_Jan_2020.json",
+//            "vrfi_all_2019.json",
+//            "vrfi_graph.json"
         ];
         $initialTestRecords = [];
         $i = 0;
         foreach ($fNames as $fName) {
-            $string = file_get_contents(__DIR__ . "/../data/" . $fName);
+            $string = file_get_contents(__DIR__ . "/../data/vrfi_last_year/" . $fName);
             $jsonArr = json_decode($string, true);
-
-//            if ($i > 3) {
-//                var_dump($jsonArr);
-//            }
-            //    var_dump($jsonArr);
 
             $client->insertOne("results", $jsonArr);
             $initialTestRecords[] = $jsonArr;
